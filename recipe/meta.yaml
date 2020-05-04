@@ -1,4 +1,4 @@
-{% set version = '0.1-3' %}
+{% set version = "0.1-3" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -16,7 +16,7 @@ source:
 
 build:
   noarch: generic
-  number: 1002
+  number: 1003
 
   rpaths:
     - lib/R/lib/
@@ -39,6 +39,8 @@ about:
   summary: A "pure R" implementation of the t-SNE algorithm.
   license_family: GPL
 
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 extra:
   recipe-maintainers:
     - conda-forge/r
