@@ -1,4 +1,4 @@
-{% set version = "0.1-3" %}
+{% set version = "0.1-3.1" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,11 +12,11 @@ source:
   url:
     - https://cran.r-project.org/src/contrib/tsne_{{ version }}.tar.gz
     - https://cran.r-project.org/src/contrib/Archive/tsne/tsne_{{ version }}.tar.gz
-  sha256: 66fdf5d73e69594af529a9c4f261d972872b9b7bffd19f85c1adcd66afd80c69
+  sha256: 14abc65bc0a3f3ed63c04dda19620e483a21d1f5f33feb74aba9f3221434d888
 
 build:
   noarch: generic
-  number: 1003
+  number: 0
 
   rpaths:
     - lib/R/lib/
