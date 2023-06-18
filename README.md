@@ -1,11 +1,11 @@
-About r-tsne
-============
+About r-tsne-feedstock
+======================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-tsne-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/jdonaldson/rtsne/
 
 Package license: GPL
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-tsne-feedstock/blob/main/LICENSE.txt)
 
 Summary: A "pure R" implementation of the t-SNE algorithm.
 
