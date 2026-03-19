@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-tsne-feedstoc
 
 Home: https://github.com/jdonaldson/rtsne/
 
-Package license: GPL
+Package license: GPL-2.0-or-later
 
 Summary: A "pure R" implementation of the t-SNE algorithm.
 
@@ -142,9 +142,5 @@ In order to produce a uniquely identifiable distribution:
 Feedstock Maintainers
 =====================
 
-* [@bgruening](https://github.com/bgruening/)
 * [@conda-forge/r](https://github.com/orgs/conda-forge/teams/r/)
-* [@daler](https://github.com/daler/)
-* [@dpryan79](https://github.com/dpryan79/)
-* [@johanneskoester](https://github.com/johanneskoester/)
 
