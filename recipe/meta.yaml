@@ -1,49 +1,49 @@
-{% set version = "0.1-3.1" %}
-
+{% set version = "0.2-0" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
   name: r-tsne
-  version: {{ version|replace("-", "_") }}
+  version: "{{ version|replace("-", "_") }}"
 
 source:
-  fn: tsne_{{ version }}.tar.gz
   url:
-    - https://cran.r-project.org/src/contrib/tsne_{{ version }}.tar.gz
-    - https://cran.r-project.org/src/contrib/Archive/tsne/tsne_{{ version }}.tar.gz
-  sha256: 14abc65bc0a3f3ed63c04dda19620e483a21d1f5f33feb74aba9f3221434d888
+    - {{ cran_mirror }}/src/contrib/tsne_{{ version }}.tar.gz
+    - {{ cran_mirror }}/src/contrib/Archive/tsne/tsne_{{ version }}.tar.gz
+  sha256: bd4cac1c63fbb04cd94eef05c451913bb87fd7a1a953d350d82a7065d468c5f2
 
 build:
+  number: 0
   noarch: generic
-  number: 4
-
   rpaths:
     - lib/R/lib/
     - lib/
+  missing_dso_whitelist:
+    - '*/R.dll'        # [win]
+    - '*/Rblas.dll'    # [win]
+    - '*/Rlapack.dll'  # [win]
+
 requirements:
   build:
+    - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
+  host:
     - r-base
-
   run:
     - r-base
 
 test:
   commands:
-    - $R -e "library('tsne')"  # [not win]
+    - $R -e "library('tsne')"           # [not win]
     - "\"%R%\" -e \"library('tsne')\""  # [win]
 
 about:
   home: https://github.com/jdonaldson/rtsne/
-  license: GPL
+  license: GPL-2.0-or-later
   summary: A "pure R" implementation of the t-SNE algorithm.
   license_family: GPL
-
   license_file:
     - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+
 extra:
   recipe-maintainers:
     - conda-forge/r
-    - dpryan79
-    - johanneskoester
-    - bgruening
-    - daler
